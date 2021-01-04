@@ -10,6 +10,6 @@
     "activeTab"
   ],
   "background": {
-    "scripts": ["screamer.js"]
+    "scripts": ["background.js"]
   }
 }
