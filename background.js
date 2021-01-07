@@ -6,8 +6,6 @@ browser.runtime.onConnect.addListener(connect);
 function connect(port) {
     let hostname = new URL(port.sender.url).hostname;
     if (domains.includes(hostname)) {
-        console.log('in list');
-    } else {
-        console.log('not in list');
+        port.postMessage();
     }
 }
