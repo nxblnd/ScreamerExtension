@@ -11,5 +11,11 @@
   ],
   "background": {
     "scripts": ["background.js"]
-  }
+  },
+  "content_scripts" : [
+    {
+      "js": ["screamer.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
