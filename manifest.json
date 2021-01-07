@@ -17,5 +17,8 @@
       "js": ["screamer.js"],
       "matches": ["<all_urls>"]
     }
+  ],
+  "web_accessible_resources": [
+    "soundtest.wav"
   ]
 }
