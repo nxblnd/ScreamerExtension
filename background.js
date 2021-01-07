@@ -1,8 +1,13 @@
 let listOfSites = ["https://twitter.com/"];
+let domains = listOfSites.map(url => new URL(url).hostname);
 
 browser.runtime.onConnect.addListener(connect);
 
 function connect(port) {
-    let url = new URL(port.sender.url);
-    console.log(url.hostname);
+    let hostname = new URL(port.sender.url).hostname;
+    if (domains.includes(hostname)) {
+        console.log('in list');
+    } else {
+        console.log('not in list');
+    }
 }
