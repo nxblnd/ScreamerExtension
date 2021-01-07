@@ -3,5 +3,6 @@ let listOfSites = ["https://twitter.com/"];
 browser.runtime.onConnect.addListener(connect);
 
 function connect(port) {
-    console.log(port.sender.url);
+    let url = new URL(port.sender.url);
+    console.log(url.hostname);
 }
