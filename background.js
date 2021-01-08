@@ -1,8 +1,8 @@
 let listOfSites = ["https://twitter.com/"];
 let domains = listOfSites.map(url => new URL(url).hostname);
-let timeLimit = 3000;
+let timeLimit = 2000;
 let audio = new Audio(browser.extension.getURL("soundtest.wav"));
-//audio.loop = true;
+audio.loop = true;
 
 browser.runtime.onConnect.addListener(connect);
 
