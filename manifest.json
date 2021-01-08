@@ -7,8 +7,10 @@
   "description": "Funny extension that screams if you spend too much time on selected web-sites",
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage"
   ],
+
   "background": {
     "scripts": ["background.js"]
   },
@@ -19,6 +21,17 @@
     }
   ],
   "web_accessible_resources": [
-    "soundtest.wav"
-  ]
+    "note.mp3"
+  ],
+
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "screamer-addon@example.com"
+    }
+  }
 }
