@@ -10,7 +10,7 @@ function setTimer(msg) {
                 msg.timeLimit);
         } else {
             background.postMessage({audio: "stop"});
-            document.clearTimeout(timer);
+            clearTimeout(timer);
         }
     });
 }
