@@ -7,9 +7,25 @@
 </head>
 <body>
 
-<form>
-    <label for="timeLimit">Time before activation, in minutes</label>
-    <input id="timeLimit" type="number" min="0" step="0.1">
+<form id="options">
+    <div>
+        <label for="timeLimit">Time before activation, in minutes</label>
+        <input id="timeLimit" type="number" min="0" step="0.1" required>
+    </div>
+    <div>
+        <label for="listOfSites">List of web-sites</label>
+        <textarea id="listOfSites" name="listOfSites" form="options" rows="10" cols="30" placeholder="http://example.com"></textarea>
+    </div>
+    <div>
+        <label for="antivirusPig">Antivirus Pig</label>
+        <input type="radio" id="antivirusPig" name="sound" checked>
+
+        <label for="nuclearLaunch">Nuclear Launch</label>
+        <input type="radio" id="nuclearLaunch" name="sound">
+
+        <label for="alarmClock">Alarm Clock</label>
+        <input type="radio" id="alarmClock" name="sound">
+    </div>
     <button type="submit">Save</button>
 </form>
 
