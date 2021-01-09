@@ -21,7 +21,9 @@
     }
   ],
   "web_accessible_resources": [
-    "note.mp3"
+    "soundboard/antivirusPig.ogg",
+    "soundboard/nuclearLaunch.ogg",
+    "soundboard/alarmClock.ogg"
   ],
 
   "options_ui": {
