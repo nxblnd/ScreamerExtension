@@ -2,17 +2,21 @@ let msInMinute = 60 * 1000;
 let defaultSettings = {
     timeLimit: 5 * msInMinute,
     listOfSites: [],
-    id: 'antivirusPig'
+    sound: 'antivirusPig'
 }
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
-document.querySelector('form').addEventListener('submit', saveOptions);
+document.querySelector('form').addEventListener('submit', submitOptions);
 
-function saveOptions(e) {
+function submitOptions(e) {
     e.preventDefault();
+    saveOptions();
+}
+
+function saveOptions() {
     browser.storage.sync.set({
         timeLimit: document.querySelector('#timeLimit').value * msInMinute,
-        listOfSites: document.querySelector('#listOfSites').value.match(/\S+/g),
+        listOfSites: document.querySelector('#listOfSites').value.match(/\S+/g) || [],
         sound: document.querySelector('input[name="sound"]:checked').id
     });
 }
@@ -24,14 +28,12 @@ function restoreOptions() {
             result = defaultSettings;
         }
         document.querySelector('#timeLimit').value = result.timeLimit / msInMinute;
-        document.querySelector('#listOfSites').value = result.listOfSites.join('\n') || [];
-        document.querySelector('#' + result.id).checked = true;
+        document.querySelector('#listOfSites').value = result.listOfSites.join('\n');
+        document.querySelector('#' + result.sound).checked = true;
+        saveOptions();
     }
 
-    function onError(error) {
-        console.log(error);
-    }
-
-    let load = browser.storage.sync.get();
-    load.then(setCurrentChoice, onError);
+    browser.storage.sync.get()
+        .then(setCurrentChoice)
+        .catch(error => console.log(error));
 }
