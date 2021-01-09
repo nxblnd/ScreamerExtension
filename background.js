@@ -16,19 +16,45 @@ let domains;
 let sound;
 
 browser.storage.sync.get()
-    .then(applyOptions)
-    .then(convertListOfSites)
-    .then(loadAudio)
+    .then(setUp)
     .catch(error => console.log(error));
 
-browser.runtime.onConnect.addListener(connect);
+browser.runtime.onConnect.addListener(dispatchPort);
 
-function connect(port) {
+function dispatchPort(port) {
+    if (port.name === 'content script') {
+        contentScript(port);
+    } else if (port.name === 'options script') {
+        optionsScript(port);
+    }
+}
+
+function contentScript(port) {
     let hostname = new URL(port.sender.url).hostname;
     if (domains.includes(hostname)) {
         port.postMessage({timeLimit: options.timeLimit});
     }
     port.onMessage.addListener(dispatchAudio);
+}
+
+function optionsScript(port) {
+
+    function respond(msg) {
+        if (msg.type === 'get') {
+            port.postMessage(options);
+        } else if (msg.type === 'set') {
+            options = msg.options;
+            setUp(options);
+        }
+    }
+
+    port.onMessage.addListener(respond);
+}
+
+function setUp(options) {
+    applyOptions(options);
+    convertListOfSites();
+    loadAudio();
 }
 
 function dispatchAudio(msg) {
@@ -42,13 +68,13 @@ function dispatchAudio(msg) {
     }
 }
 
-function applyOptions(loadedOptions) {
+function applyOptions(newOptions) {
 
     // if result is empty object
-    if (Object.keys(loadedOptions).length === 0 && loadedOptions.constructor === Object) {
+    if (Object.keys(newOptions).length === 0 && newOptions.constructor === Object) {
         options = defaultOptions;
     } else {
-        options = loadedOptions;
+        options = newOptions;
     }
 }
 

@@ -1,10 +1,6 @@
-let msInMinute = 60 * 1000;
-let defaultOptions = {
-    timeLimit: 5 * msInMinute,
-    listOfSites: [],
-    sound: 'antivirusPig',
-    loop: true
-}
+const msInMinute = 60 * 1000;
+
+let background = browser.runtime.connect({name: 'options script'});
 
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.querySelector('form').addEventListener('submit', submitOptions);
@@ -15,28 +11,30 @@ function submitOptions(e) {
 }
 
 function saveOptions() {
-    browser.storage.sync.set({
+    let options = updateOptions();
+    browser.storage.sync.set(options);
+}
+
+function updateOptions() {
+    options = {
         timeLimit: document.querySelector('#timeLimit').value * msInMinute,
         listOfSites: document.querySelector('#listOfSites').value.match(/\S+/g) || [],
         sound: document.querySelector('input[name="sound"]:checked').id,
         loop: document.querySelector('#loop').checked
-    });
+    }
+    background.postMessage({type: 'set', options: options});
+    return options;
 }
 
 function restoreOptions() {
 
-    function setCurrentChoice(result) {
-        if (Object.keys(result).length === 0 && result.constructor === Object) { // if result is empty object
-            result = defaultOptions;
-        }
-        document.querySelector('#timeLimit').value = result.timeLimit / msInMinute;
-        document.querySelector('#listOfSites').value = result.listOfSites.join('\n');
-        document.querySelector('#' + result.sound).checked = true;
-        document.querySelector('#loop').checked = result.loop;
-        saveOptions();
+    function setCurrentChoice(options) {
+        document.querySelector('#timeLimit').value = options.timeLimit / msInMinute;
+        document.querySelector('#listOfSites').value = options.listOfSites.join('\n');
+        document.querySelector('#' + options.sound).checked = true;
+        document.querySelector('#loop').checked = options.loop;
     }
 
-    browser.storage.sync.get()
-        .then(setCurrentChoice)
-        .catch(error => console.log(error));
+    background.postMessage({type: 'get'});
+    background.onMessage.addListener(setCurrentChoice);
 }
