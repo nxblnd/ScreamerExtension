@@ -6,9 +6,9 @@ const defaultOptions = {
     loop: true
 }
 const soundboard = {
-    antivirusPig: browser.extension.getURL("soundboard/antivirusPig.ogg"),
-    nuclearLaunch: browser.extension.getURL("soundboard/nuclearLaunch.ogg"),
-    alarmClock: browser.extension.getURL("soundboard/alarmClock.ogg")
+    antivirusPig: browser.runtime.getURL("soundboard/antivirusPig.ogg"),
+    nuclearLaunch: browser.runtime.getURL("soundboard/nuclearLaunch.ogg"),
+    alarmClock: browser.runtime.getURL("soundboard/alarmClock.ogg")
 }
 
 let options;
