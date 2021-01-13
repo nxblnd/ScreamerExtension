@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Screamer settings</title>
+    <link rel="stylesheet" href="options.css">
     <script src="options.js" defer></script>
 </head>
 <body>
 
 <form id="options">
-    <div>
+    <div id="timeInput">
         <label for="timeLimit">Time before activation, in minutes</label>
         <input id="timeLimit" type="number" min="0" step="0.1" required>
     </div>
-    <div>
+    <div id="sitesInput">
         <label for="listOfSites">List of web-sites</label>
         <textarea id="listOfSites" name="listOfSites" form="options" rows="10" cols="30" placeholder="http://example.com"></textarea>
     </div>
-    <div>
+    <div id="soundInput">
         <label for="antivirusPig">Antivirus Pig</label>
         <input type="radio" id="antivirusPig" name="sound">
 
@@ -26,7 +27,7 @@
         <label for="alarmClock">Alarm Clock</label>
         <input type="radio" id="alarmClock" name="sound">
     </div>
-    <div>
+    <div id="loopInput">
         <label for="loop">Loop sound</label>
         <input type="checkbox" id="loop">
     </div>
