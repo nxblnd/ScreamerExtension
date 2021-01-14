@@ -1,0 +1,17 @@
+@import 'photon-colors';
+
+$content-box-background: #202023;
+
+$bg-color: $grey-70;
+$element-bg-color: $grey-80;
+$primary-text-color: $white-100;
+$secondary-text-color: $grey-10;
+
+$btn-text: $white-100;
+$btn-background: $blue-60;
+$btn-hover: $blue-70;
+$btn-pressed: $blue-80;
+$btn-focus-A: $blue-50;
+$btn-focus-B: transparentize($btn-focus-A, 0.7);
+$btn-error-A: $red-60;
+$btn-error-B: transparentize($btn-error-A, 0.7);

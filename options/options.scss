@@ -1,0 +1,170 @@
+@import 'ui-colors.scss';
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  color: $primary-text-color;
+  font-size: 13px;
+  background-color: $content-box-background;
+}
+
+@mixin btn-states {
+  &:hover {
+    background-color: $btn-hover;
+  }
+
+  &:active {
+    background-color: $btn-pressed;
+    box-shadow: none;
+  }
+
+  &:focus {
+    @include shadow-override;
+  }
+
+  &:focus-visible {
+    @include blue-box-shadow;
+  }
+}
+
+@mixin blue-box-shadow {
+  box-shadow: 0 0 0 1px $btn-focus-A inset,
+              0 0 0 1px $btn-focus-A,
+              0 0 0 4px $btn-focus-B
+}
+
+@mixin shadow-override {
+  outline: none;
+  box-shadow: none;
+}
+
+button {
+  color: $btn-text;
+  background-color: $btn-background;
+
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+
+  border: none;
+  border-radius: 2px;
+
+  padding: 0 8px;
+  height: 32px;
+  width: auto;
+  min-width: 10rem;
+
+  @include btn-states;
+}
+
+input[type='checkbox'] {
+  appearance: none;
+
+  height: 16px;
+  width: 16px;
+  padding: 1px;
+  margin: 4px;
+
+  background-color: $grey-10-a10;
+
+  border-radius: 2px;
+  border: 1px solid $grey-10-a20;
+
+  &:hover {
+    background-color: $grey-10-a20;
+  }
+
+  &:active {
+    background-color: $grey-10-a40;
+  }
+
+  &:focus {
+    @include shadow-override;
+  }
+
+  &:focus-visible {
+    @include blue-box-shadow;
+  }
+
+  &:checked {
+    background-image: url('checkbox-check-16.svg');
+    background-position: center;
+    height: 16px;
+    width: 16px;
+    border: none;
+    background-color: $btn-background;
+
+    @include btn-states;
+  }
+}
+
+input[type='radio'] {
+  @extend [type='checkbox'];
+
+  border-radius: 100%;
+
+  &:checked {
+    background-image: url('radiobutton-marker-16.svg');
+  }
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+
+  width: 30rem;
+  margin: 8px 0;
+
+  label {
+    margin-bottom: 8px;
+  }
+
+  @mixin input-style {
+
+    color: $primary-text-color;
+    background-color: $element-bg-color;
+
+    border-radius: 2px;
+    border: 1px solid $grey-10-a20;
+
+    width: auto;
+    padding: 0 8px;
+
+    outline: none;
+
+    &:hover {
+      border-color: $grey-10-a40;
+    }
+
+    &:focus {
+      border-color: $blue-50;
+      box-shadow: 0 0 0 1px $btn-focus-A,
+                  0 0 0 4px $btn-focus-B;
+    }
+
+    &:invalid {
+      border-color: $red-60;
+      box-shadow: 0 0 0 1px $btn-error-A,
+                  0 0 0 4px $btn-error-B;
+    }
+
+    &::placeholder {
+      color: $grey-50;
+    }
+  }
+
+  input {
+    @include input-style;
+
+    height: 32px;
+  }
+
+  textarea {
+    @include input-style;
+
+    resize: none;
+  }
+}
+
