@@ -93,16 +93,21 @@ input[type=radio]:checked {
   background-image: url("radiobutton-marker-16.svg");
 }
 
-div {
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+.inputField {
   display: flex;
   flex-direction: column;
   width: 30rem;
   margin: 8px 0;
 }
-div label {
+.inputField label {
   margin-bottom: 8px;
 }
-div input {
+.inputField input {
   color: #ffffff;
   background-color: #2a2a2e;
   border-radius: 2px;
@@ -112,21 +117,21 @@ div input {
   outline: none;
   height: 32px;
 }
-div input:hover {
+.inputField input:hover {
   border-color: rgba(249, 249, 250, 0.4);
 }
-div input:focus {
+.inputField input:focus {
   border-color: #0a84ff;
   box-shadow: 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
-div input:invalid {
+.inputField input:invalid {
   border-color: #d70022;
   box-shadow: 0 0 0 1px #d70022, 0 0 0 4px rgba(215, 0, 34, 0.3);
 }
-div input::placeholder {
+.inputField input::placeholder {
   color: #737373;
 }
-div textarea {
+.inputField textarea {
   color: #ffffff;
   background-color: #2a2a2e;
   border-radius: 2px;
@@ -136,22 +141,17 @@ div textarea {
   outline: none;
   resize: none;
 }
-div textarea:hover {
+.inputField textarea:hover {
   border-color: rgba(249, 249, 250, 0.4);
 }
-div textarea:focus {
+.inputField textarea:focus {
   border-color: #0a84ff;
   box-shadow: 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
-div textarea:invalid {
+.inputField textarea:invalid {
   border-color: #d70022;
   box-shadow: 0 0 0 1px #d70022, 0 0 0 4px rgba(215, 0, 34, 0.3);
 }
-div textarea::placeholder {
+.inputField textarea::placeholder {
   color: #737373;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
 }

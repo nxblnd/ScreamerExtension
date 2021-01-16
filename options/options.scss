@@ -40,6 +40,40 @@ body {
   box-shadow: none;
 }
 
+@mixin input-style {
+
+  color: $primary-text-color;
+  background-color: $element-bg-color;
+
+  border-radius: 2px;
+  border: 1px solid $grey-10-a20;
+
+  width: auto;
+  padding: 0 8px;
+
+  outline: none;
+
+  &:hover {
+    border-color: $grey-10-a40;
+  }
+
+  &:focus {
+    border-color: $blue-50;
+    box-shadow: 0 0 0 1px $btn-focus-A,
+    0 0 0 4px $btn-focus-B;
+  }
+
+  &:invalid {
+    border-color: $red-60;
+    box-shadow: 0 0 0 1px $btn-error-A,
+    0 0 0 4px $btn-error-B;
+  }
+
+  &::placeholder {
+    color: $grey-50;
+  }
+}
+
 button {
   color: $btn-text;
   background-color: $btn-background;
@@ -110,7 +144,12 @@ input[type='radio'] {
   }
 }
 
-div {
+input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+.inputField {
   display: flex;
   flex-direction: column;
 
@@ -119,40 +158,6 @@ div {
 
   label {
     margin-bottom: 8px;
-  }
-
-  @mixin input-style {
-
-    color: $primary-text-color;
-    background-color: $element-bg-color;
-
-    border-radius: 2px;
-    border: 1px solid $grey-10-a20;
-
-    width: auto;
-    padding: 0 8px;
-
-    outline: none;
-
-    &:hover {
-      border-color: $grey-10-a40;
-    }
-
-    &:focus {
-      border-color: $blue-50;
-      box-shadow: 0 0 0 1px $btn-focus-A,
-                  0 0 0 4px $btn-focus-B;
-    }
-
-    &:invalid {
-      border-color: $red-60;
-      box-shadow: 0 0 0 1px $btn-error-A,
-                  0 0 0 4px $btn-error-B;
-    }
-
-    &::placeholder {
-      color: $grey-50;
-    }
   }
 
   input {
@@ -166,10 +171,4 @@ div {
 
     resize: none;
   }
-}
-
-
-input[type='number'] {
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
 }
