@@ -150,3 +150,8 @@ div textarea:invalid {
 div textarea::placeholder {
   color: #737373;
 }
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
