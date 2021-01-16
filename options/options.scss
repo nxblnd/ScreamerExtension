@@ -40,40 +40,6 @@ body {
   box-shadow: none;
 }
 
-@mixin input-style {
-
-  color: $primary-text-color;
-  background-color: $element-bg-color;
-
-  border-radius: 2px;
-  border: 1px solid $grey-10-a20;
-
-  width: auto;
-  padding: 0 8px;
-
-  outline: none;
-
-  &:hover {
-    border-color: $grey-10-a40;
-  }
-
-  &:focus {
-    border-color: $blue-50;
-    box-shadow: 0 0 0 1px $btn-focus-A,
-    0 0 0 4px $btn-focus-B;
-  }
-
-  &:invalid {
-    border-color: $red-60;
-    box-shadow: 0 0 0 1px $btn-error-A,
-    0 0 0 4px $btn-error-B;
-  }
-
-  &::placeholder {
-    color: $grey-50;
-  }
-}
-
 button {
   color: $btn-text;
   background-color: $btn-background;
@@ -99,7 +65,7 @@ input[type='checkbox'] {
   height: 16px;
   width: 16px;
   padding: 1px;
-  margin: 4px;
+  margin: 4px 4px 4px 0;
 
   background-color: $grey-10-a10;
 
@@ -161,14 +127,71 @@ input[type='number'] {
   }
 
   input {
-    @include input-style;
+    color: $primary-text-color;
+    background-color: $element-bg-color;
+
+    border-radius: 2px;
+    border: 1px solid $grey-10-a20;
+
+    width: auto;
+    padding: 0 8px;
+
+    outline: none;
+
+    &:hover {
+      border-color: $grey-10-a40;
+    }
+
+    &:focus {
+      border-color: $blue-50;
+      box-shadow: 0 0 0 1px $btn-focus-A,
+                  0 0 0 4px $btn-focus-B;
+    }
+
+    &:invalid {
+      border-color: $red-60;
+      box-shadow: 0 0 0 1px $btn-error-A,
+                  0 0 0 4px $btn-error-B;
+    }
+
+    &::placeholder {
+      color: $grey-50;
+    }
 
     height: 32px;
   }
 
   textarea {
-    @include input-style;
+    @extend input;
+
+    padding: 4px 8px;
 
     resize: none;
+  }
+}
+
+.controlPanel {
+  display: flex;
+  flex-direction: column;
+
+  margin: 8px 0;
+
+  p {
+    margin: 4px 0;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+
+    label {
+      margin: 4px 4px 4px 8px;
+    }
+  }
+}
+
+#soundInput {
+  .toggle {
+    margin-left: 8px;
   }
 }

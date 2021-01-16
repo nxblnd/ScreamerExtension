@@ -40,30 +40,30 @@ button:focus-visible {
   box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
 
-input[type=checkbox], input[type=radio] {
+input[type=checkbox], .inputField textarea[type=checkbox], input[type=radio], .inputField textarea[type=radio] {
   appearance: none;
   height: 16px;
   width: 16px;
   padding: 1px;
-  margin: 4px;
+  margin: 4px 4px 4px 0;
   background-color: rgba(249, 249, 250, 0.1);
   border-radius: 2px;
   border: 1px solid rgba(249, 249, 250, 0.2);
 }
-input[type=checkbox]:hover, input[type=radio]:hover {
+input[type=checkbox]:hover, .inputField textarea[type=checkbox]:hover, input[type=radio]:hover, .inputField textarea[type=radio]:hover {
   background-color: rgba(249, 249, 250, 0.2);
 }
-input[type=checkbox]:active, input[type=radio]:active {
+input[type=checkbox]:active, .inputField textarea[type=checkbox]:active, input[type=radio]:active, .inputField textarea[type=radio]:active {
   background-color: rgba(249, 249, 250, 0.4);
 }
-input[type=checkbox]:focus, input[type=radio]:focus {
+input[type=checkbox]:focus, .inputField textarea[type=checkbox]:focus, input[type=radio]:focus, .inputField textarea[type=radio]:focus {
   outline: none;
   box-shadow: none;
 }
-input[type=checkbox]:focus-visible, input[type=radio]:focus-visible {
+input[type=checkbox]:focus-visible, .inputField textarea[type=checkbox]:focus-visible, input[type=radio]:focus-visible, .inputField textarea[type=radio]:focus-visible {
   box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
-input[type=checkbox]:checked, input[type=radio]:checked {
+input[type=checkbox]:checked, .inputField textarea[type=checkbox]:checked, input[type=radio]:checked, .inputField textarea[type=radio]:checked {
   background-image: url("checkbox-check-16.svg");
   background-position: center;
   height: 16px;
@@ -71,29 +71,29 @@ input[type=checkbox]:checked, input[type=radio]:checked {
   border: none;
   background-color: #0060df;
 }
-input[type=checkbox]:checked:hover, input[type=radio]:checked:hover {
+input[type=checkbox]:checked:hover, .inputField textarea[type=checkbox]:checked:hover, input[type=radio]:checked:hover, .inputField textarea[type=radio]:checked:hover {
   background-color: #003eaa;
 }
-input[type=checkbox]:checked:active, input[type=radio]:checked:active {
+input[type=checkbox]:checked:active, .inputField textarea[type=checkbox]:checked:active, input[type=radio]:checked:active, .inputField textarea[type=radio]:checked:active {
   background-color: #002275;
   box-shadow: none;
 }
-input[type=checkbox]:checked:focus, input[type=radio]:checked:focus {
+input[type=checkbox]:checked:focus, .inputField textarea[type=checkbox]:checked:focus, input[type=radio]:checked:focus, .inputField textarea[type=radio]:checked:focus {
   outline: none;
   box-shadow: none;
 }
-input[type=checkbox]:checked:focus-visible, input[type=radio]:checked:focus-visible {
+input[type=checkbox]:checked:focus-visible, .inputField textarea[type=checkbox]:checked:focus-visible, input[type=radio]:checked:focus-visible, .inputField textarea[type=radio]:checked:focus-visible {
   box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
 
-input[type=radio] {
+input[type=radio], .inputField textarea[type=radio] {
   border-radius: 100%;
 }
-input[type=radio]:checked {
+input[type=radio]:checked, .inputField textarea[type=radio]:checked {
   background-image: url("radiobutton-marker-16.svg");
 }
 
-input[type=number] {
+input[type=number], .inputField textarea[type=number] {
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
 }
@@ -107,7 +107,7 @@ input[type=number] {
 .inputField label {
   margin-bottom: 8px;
 }
-.inputField input {
+.inputField input, .inputField textarea {
   color: #ffffff;
   background-color: #2a2a2e;
   border-radius: 2px;
@@ -117,41 +117,41 @@ input[type=number] {
   outline: none;
   height: 32px;
 }
-.inputField input:hover {
+.inputField input:hover, .inputField textarea:hover {
   border-color: rgba(249, 249, 250, 0.4);
 }
-.inputField input:focus {
+.inputField input:focus, .inputField textarea:focus {
   border-color: #0a84ff;
   box-shadow: 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
-.inputField input:invalid {
+.inputField input:invalid, .inputField textarea:invalid {
   border-color: #d70022;
   box-shadow: 0 0 0 1px #d70022, 0 0 0 4px rgba(215, 0, 34, 0.3);
 }
-.inputField input::placeholder {
+.inputField input::placeholder, .inputField textarea::placeholder {
   color: #737373;
 }
 .inputField textarea {
-  color: #ffffff;
-  background-color: #2a2a2e;
-  border-radius: 2px;
-  border: 1px solid rgba(249, 249, 250, 0.2);
-  width: auto;
-  padding: 0 8px;
-  outline: none;
+  padding: 4px 8px;
   resize: none;
 }
-.inputField textarea:hover {
-  border-color: rgba(249, 249, 250, 0.4);
+
+.controlPanel {
+  display: flex;
+  flex-direction: column;
+  margin: 8px 0;
 }
-.inputField textarea:focus {
-  border-color: #0a84ff;
-  box-shadow: 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
+.controlPanel p {
+  margin: 4px 0;
 }
-.inputField textarea:invalid {
-  border-color: #d70022;
-  box-shadow: 0 0 0 1px #d70022, 0 0 0 4px rgba(215, 0, 34, 0.3);
+.controlPanel .toggle {
+  display: flex;
+  align-items: center;
 }
-.inputField textarea::placeholder {
-  color: #737373;
+.controlPanel .toggle label {
+  margin: 4px 4px 4px 8px;
+}
+
+#soundInput .toggle {
+  margin-left: 8px;
 }
