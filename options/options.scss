@@ -4,6 +4,8 @@ html,
 body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
   padding: 4px;
   color: $primary-text-color;
   font-size: 13px;
@@ -38,6 +40,39 @@ body {
 @mixin shadow-override {
   outline: none;
   box-shadow: none;
+}
+
+@mixin input-style {
+
+  color: $primary-text-color;
+  background-color: $element-bg-color;
+
+  border-radius: 2px;
+  border: 1px solid $grey-10-a20;
+
+  width: auto;
+
+  outline: none;
+
+  &:hover {
+    border-color: $grey-10-a40;
+  }
+
+  &:focus {
+    border-color: $blue-50;
+    box-shadow: 0 0 0 1px $btn-focus-A,
+    0 0 0 4px $btn-focus-B;
+  }
+
+  &:invalid {
+    border-color: $red-60;
+    box-shadow: 0 0 0 1px $btn-error-A,
+    0 0 0 4px $btn-error-B;
+  }
+
+  &::placeholder {
+    color: $grey-50;
+  }
 }
 
 button {
@@ -115,6 +150,10 @@ input[type='number'] {
   -webkit-appearance: textfield;
 }
 
+form > div {
+  margin-bottom: 12px;
+}
+
 .inputField {
   display: flex;
   flex-direction: column;
@@ -127,44 +166,17 @@ input[type='number'] {
   }
 
   input {
-    color: $primary-text-color;
-    background-color: $element-bg-color;
+    @include input-style;
 
-    border-radius: 2px;
-    border: 1px solid $grey-10-a20;
-
-    width: auto;
     padding: 0 8px;
-
-    outline: none;
-
-    &:hover {
-      border-color: $grey-10-a40;
-    }
-
-    &:focus {
-      border-color: $blue-50;
-      box-shadow: 0 0 0 1px $btn-focus-A,
-                  0 0 0 4px $btn-focus-B;
-    }
-
-    &:invalid {
-      border-color: $red-60;
-      box-shadow: 0 0 0 1px $btn-error-A,
-                  0 0 0 4px $btn-error-B;
-    }
-
-    &::placeholder {
-      color: $grey-50;
-    }
 
     height: 32px;
   }
 
   textarea {
-    @extend input;
+    @include input-style;
 
-    padding: 4px 8px;
+    padding: 8px 8px;
 
     resize: none;
   }
@@ -174,10 +186,8 @@ input[type='number'] {
   display: flex;
   flex-direction: column;
 
-  margin: 8px 0;
-
   p {
-    margin: 4px 0;
+    margin: 8px 0;
   }
 
   .toggle {
