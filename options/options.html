@@ -5,42 +5,43 @@
     <title>Screamer settings</title>
     <link rel="stylesheet" href="options.css">
     <script src="options.js" defer></script>
+    <script src="l10n.js"></script> <!--Localization helper-->
 </head>
 <body>
 
 <form id="options">
     <div id="timeInput" class="inputField">
-        <label for="timeLimit">Time before activation, in minutes</label>
+        <label for="timeLimit">__MSG_label_timeLimit__</label>
         <input id="timeLimit" type="number" min="0" step="0.1" placeholder="5" required>
     </div>
     <div id="sitesInput" class="inputField">
-        <label for="listOfSites">List of web-sites</label>
+        <label for="listOfSites">__MSG_label_listOfSites__</label>
         <textarea id="listOfSites" name="listOfSites" form="options" rows="10" cols="30" placeholder="http://example.com"></textarea>
     </div>
     <div id="soundInput" class="controlPanel">
-        <p>Select sound</p>
+        <p>__MSG_label_soundInput__</p>
         <div class="toggle">
             <input type="radio" id="antivirusPig" name="sound">
-            <label for="antivirusPig">Antivirus Pig</label>
+            <label for="antivirusPig">__MSG_label_sound_antivirusPig__</label>
         </div>
 
         <div class="toggle">
-            <input type="radio" id="nuclearLaunch" name="sound">
-            <label for="nuclearLaunch">Nuclear Launch</label>
+            <input type="radio" id="civilProtection" name="sound">
+            <label for="civilProtection">__MSG_label_sound_civilProtection__</label>
         </div>
 
         <div class="toggle">
             <input type="radio" id="alarmClock" name="sound">
-            <label for="alarmClock">Alarm Clock</label>
+            <label for="alarmClock">__MSG_label_sound_alarmClock__</label>
         </div>
     </div>
     <div id="loopInput" class="controlPanel">
         <div class="toggle">
             <input type="checkbox" id="loop">
-            <label for="loop">Loop sound</label>
+            <label for="loop">__MSG_label_loopInput__</label>
         </div>
     </div>
-    <button type="submit">Save</button>
+    <button type="submit">__MSG_button_save__</button>
 </form>
 
 </body>

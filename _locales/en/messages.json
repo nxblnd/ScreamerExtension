@@ -3,9 +3,38 @@
     "message": "Screamer",
     "description": "Name of the extension"
   },
-
   "extensionDescription": {
     "message": "Funny extension that screams if you spend too much time on selected web-sites",
     "description": "Description of the extension"
+  },
+
+  "label_timeLimit": {
+    "message": "Time before activation, in minutes",
+    "description": "Label for timer length"
+  },
+  "label_listOfSites": {
+    "message": "List of web-sites",
+    "description": "Label for list of sites textarea"
+  },
+  "label_soundInput": {
+    "message": "Select sound",
+    "description": "Title of 'select sound' radiobutton group"
+  },
+  "label_sound_antivirusPig": {
+    "message": "Antivirus Pig"
+  },
+  "label_sound_civilProtection": {
+    "message": "Civil Protection"
+  },
+  "label_sound_alarmClock": {
+    "message": "Alarm Clock"
+  },
+  "label_loopInput": {
+    "message": "Loop sound",
+    "description": "Label for loop option"
+  },
+  "button_save": {
+    "message": "Save",
+    "description": "'Save' button label"
   }
 }

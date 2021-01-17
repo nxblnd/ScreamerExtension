@@ -107,6 +107,7 @@ form > div {
   display: flex;
   flex-direction: column;
   width: 30rem;
+  margin: 8px 0;
 }
 .inputField label {
   margin-bottom: 8px;
