@@ -1,0 +1,40 @@
+{
+  "extensionName": {
+    "message": "Кричалка",
+    "description": "Название расширения"
+  },
+  "extensionDescription": {
+    "message": "Кричит, если Вы проводите слишком много времени на указанных веб-сайтах",
+    "description": "Описание расширения"
+  },
+
+  "label_timeLimit": {
+    "message": "Время до активации, в минутах",
+    "description": "Label for timer length"
+  },
+  "label_listOfSites": {
+    "message": "Список веб-сайтов",
+    "description": "Label for list of sites textarea"
+  },
+  "label_soundInput": {
+    "message": "Выберите звук",
+    "description": "Title of 'select sound' radiobutton group"
+  },
+  "label_sound_antivirusPig": {
+    "message": "Антивирусная свинья"
+  },
+  "label_sound_civilProtection": {
+    "message": "Гражданская оборона"
+  },
+  "label_sound_alarmClock": {
+    "message": "Будильник"
+  },
+  "label_loopInput": {
+    "message": "Зациклить звук",
+    "description": "Label for loop option"
+  },
+  "button_save": {
+    "message": "Сохранить",
+    "description": "'Save' button label"
+  }
+}
