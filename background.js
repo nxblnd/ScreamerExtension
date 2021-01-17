@@ -14,6 +14,7 @@ const soundboard = {
 let options;
 let domains;
 let sound;
+let contentPorts = [];
 
 browser.storage.sync.get()
     .then(setUp)
@@ -30,11 +31,16 @@ function dispatchPort(port) {
 }
 
 function contentScript(port) {
+    contentPorts[port.sender.tab.id] = port;
+    callContentScript(port);
+}
+
+function callContentScript(port) {
     let hostname = new URL(port.sender.url).hostname;
     if (domains.includes(hostname)) {
         port.postMessage({timeLimit: options.timeLimit});
+        port.onMessage.addListener(dispatchAudio);
     }
-    port.onMessage.addListener(dispatchAudio);
 }
 
 function optionsScript(port) {
@@ -55,6 +61,7 @@ function setUp(options) {
     applyOptions(options);
     convertListOfSites();
     loadAudio();
+    contentPorts.forEach(port => callContentScript(port));
 }
 
 function dispatchAudio(msg) {
