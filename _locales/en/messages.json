@@ -1,1 +1,11 @@
-{}
+{
+  "extensionName": {
+    "message": "Screamer",
+    "description": "Name of the extension"
+  },
+
+  "extensionDescription": {
+    "message": "Funny extension that screams if you spend too much time on selected web-sites",
+    "description": "Description of the extension"
+  }
+}

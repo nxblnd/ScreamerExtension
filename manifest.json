@@ -1,10 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "ScreamerExt",
+  "name": "__MSG_extensionName__",
   "version": "0.2",
+  "default_locale": "en",
 
   "author": "Pavel 'nxblnd' Egorov",
-  "description": "Funny extension that screams if you spend too much time on selected web-sites",
+  "description": "__MSG_extensionDescription__",
 
   "permissions": [
     "activeTab",
