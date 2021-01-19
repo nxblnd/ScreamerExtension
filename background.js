@@ -7,7 +7,7 @@ const defaultOptions = {
 }
 const soundboard = {
     antivirusPig: browser.runtime.getURL("soundboard/antivirusPig.ogg"),
-    nuclearLaunch: browser.runtime.getURL("soundboard/civilProtection.ogg"),
+    civilProtection: browser.runtime.getURL("soundboard/civilProtection.ogg"),
     alarmClock: browser.runtime.getURL("soundboard/alarmClock.ogg")
 }
 
