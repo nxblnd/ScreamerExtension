@@ -1,11 +1,16 @@
 @import 'photon-colors';
 
-$content-box-background: #202023;
+$content-box-background-light: $white-100;
+$bg-color-light: $grey-10;
+$element-bg-color-light: $grey-10;
+$primary-text-light: $grey-90;
+$secondary-text-light: $grey-50;
 
-$bg-color: $grey-70;
-$element-bg-color: $grey-80;
-$primary-text-color: $white-100;
-$secondary-text-color: $grey-10;
+$content-box-background-dark: #202023;
+$bg-color-dark: $grey-70;
+$element-bg-color-dark: $grey-80;
+$primary-text-dark: $white-100;
+$secondary-text-dark: $grey-10;
 
 $btn-text: $white-100;
 $btn-background: $blue-60;
