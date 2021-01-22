@@ -95,7 +95,7 @@ function convertListOfSites() {
         try {
             return trimWWW(new URL(url).hostname);
         } catch {
-            return url;
+            return trimWWW(url);
         }
     }
 
