@@ -200,8 +200,36 @@ form > div {
   }
 }
 
+.savePanel {
+  display: flex;
+  flex-direction: row;
+}
+
+.status {
+  visibility: hidden;
+}
+
 #soundInput {
   .toggle {
     margin-left: 8px;
+  }
+}
+
+.showMessage {
+  animation: 3s showMessageAnimation;
+}
+
+@keyframes showMessageAnimation {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

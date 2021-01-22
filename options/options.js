@@ -12,7 +12,25 @@ function submitOptions(e) {
 
 function saveOptions() {
     let options = updateOptions();
-    browser.storage.sync.set(options);
+    browser.storage.sync.set(options)
+        .then(showSaveStatus('success'))
+        .catch(() => showSaveStatus('error'));
+}
+
+function showSaveStatus(status) {
+    let saveStatus = document.querySelector('#saveStatus');
+    saveStatus.classList.remove('showMessage');
+
+    if (status === 'success') {
+        saveStatus.textContent = 'Settings saved';
+    } else if (status === 'error') {
+        saveStatus.textContent = 'Error occurred'; // was not tested
+    }
+
+    saveStatus.addEventListener('animationstart', () => saveStatus.style.visibility = 'visible');
+    saveStatus.addEventListener('animationend', () => {saveStatus.style.visibility = 'hidden'; });
+
+    saveStatus.classList.add('showMessage');
 }
 
 function updateOptions() {
