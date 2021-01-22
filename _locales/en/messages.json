@@ -36,5 +36,13 @@
   "button_save": {
     "message": "Save",
     "description": "'Save' button label"
+  },
+  "status_saveSuccess": {
+    "message": "Settings saved",
+    "description": "Save was successful"
+  },
+  "status_saveError": {
+    "message": "Error occurred!!!",
+    "description": "Save was not successful"
   }
 }

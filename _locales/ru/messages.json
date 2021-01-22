@@ -36,5 +36,13 @@
   "button_save": {
     "message": "Сохранить",
     "description": "'Save' button label"
+  },
+  "status_saveSuccess": {
+    "message": "Настройки сохранены",
+    "description": "Save was successful"
+  },
+  "status_saveError": {
+    "message": "Произошла ошибка!!!",
+    "description": "Save was not successful"
   }
 }

@@ -21,9 +21,9 @@ function showSaveStatus(status) {
     let saveStatus = document.querySelector('#saveStatus');
 
     if (status === 'success') {
-        saveStatus.textContent = 'Settings saved';
+        saveStatus.textContent = browser.i18n.getMessage('status_saveSuccess');
     } else if (status === 'error') {
-        saveStatus.textContent = 'Error occurred!!!'; // was not tested
+        saveStatus.textContent = browser.i18n.getMessage('status_saveError'); // was not tested
     }
 
     saveStatus.addEventListener('animationstart', () => saveStatus.style.visibility = 'visible');
