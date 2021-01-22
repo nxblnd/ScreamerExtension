@@ -19,16 +19,18 @@ function saveOptions() {
 
 function showSaveStatus(status) {
     let saveStatus = document.querySelector('#saveStatus');
-    saveStatus.classList.remove('showMessage');
 
     if (status === 'success') {
         saveStatus.textContent = 'Settings saved';
     } else if (status === 'error') {
-        saveStatus.textContent = 'Error occurred'; // was not tested
+        saveStatus.textContent = 'Error occurred!!!'; // was not tested
     }
 
     saveStatus.addEventListener('animationstart', () => saveStatus.style.visibility = 'visible');
-    saveStatus.addEventListener('animationend', () => {saveStatus.style.visibility = 'hidden'; });
+    saveStatus.addEventListener('animationend', () => {
+        saveStatus.style.visibility = 'hidden';
+        saveStatus.classList.remove('showMessage');
+    });
 
     saveStatus.classList.add('showMessage');
 }
