@@ -8,9 +8,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 4px;
-  color: #ffffff;
   font-size: 13px;
-  background-color: #202023;
+}
+@media (prefers-color-scheme: light) {
+  html,
+body {
+    color: #0c0c0d;
+    background-color: #ffffff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  html,
+body {
+    color: #ffffff;
+    background-color: #202023;
+  }
 }
 
 button {
@@ -47,15 +59,40 @@ input[type=checkbox], input[type=radio] {
   width: 16px;
   padding: 1px;
   margin: 4px 4px 4px 0;
-  background-color: rgba(249, 249, 250, 0.1);
   border-radius: 2px;
-  border: 1px solid rgba(249, 249, 250, 0.2);
+  border: 1px solid;
 }
-input[type=checkbox]:hover, input[type=radio]:hover {
-  background-color: rgba(249, 249, 250, 0.2);
+@media (prefers-color-scheme: light) {
+  input[type=checkbox], input[type=radio] {
+    background-color: rgba(12, 12, 13, 0.1);
+    border-color: rgba(12, 12, 13, 0.2);
+  }
 }
-input[type=checkbox]:active, input[type=radio]:active {
-  background-color: rgba(249, 249, 250, 0.4);
+@media (prefers-color-scheme: dark) {
+  input[type=checkbox], input[type=radio] {
+    background-color: rgba(249, 249, 250, 0.1);
+    border-color: rgba(249, 249, 250, 0.2);
+  }
+}
+@media (prefers-color-scheme: light) {
+  input[type=checkbox]:hover, input[type=radio]:hover {
+    background-color: rgba(12, 12, 13, 0.2);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  input[type=checkbox]:hover, input[type=radio]:hover {
+    background-color: rgba(249, 249, 250, 0.2);
+  }
+}
+@media (prefers-color-scheme: light) {
+  input[type=checkbox]:active, input[type=radio]:active {
+    background-color: rgba(12, 12, 13, 0.3);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  input[type=checkbox]:active, input[type=radio]:active {
+    background-color: rgba(249, 249, 250, 0.4);
+  }
 }
 input[type=checkbox]:focus, input[type=radio]:focus {
   outline: none;
@@ -113,17 +150,36 @@ form > div {
   margin-bottom: 8px;
 }
 .inputField input {
-  color: #ffffff;
-  background-color: #2a2a2e;
   border-radius: 2px;
-  border: 1px solid rgba(249, 249, 250, 0.2);
+  border: 1px solid;
   width: auto;
   outline: none;
   padding: 0 8px;
   height: 32px;
 }
-.inputField input:hover {
-  border-color: rgba(249, 249, 250, 0.4);
+@media (prefers-color-scheme: light) {
+  .inputField input {
+    color: #0c0c0d;
+    background-color: #f9f9fa;
+    border-color: rgba(12, 12, 13, 0.2);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .inputField input {
+    color: #ffffff;
+    background-color: #2a2a2e;
+    border-color: rgba(249, 249, 250, 0.2);
+  }
+}
+@media (prefers-color-scheme: light) {
+  .inputField input:hover {
+    border-color: rgba(12, 12, 13, 0.3);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .inputField input:hover {
+    border-color: rgba(249, 249, 250, 0.4);
+  }
 }
 .inputField input:focus {
   border-color: #0a84ff;
@@ -137,17 +193,36 @@ form > div {
   color: #737373;
 }
 .inputField textarea {
-  color: #ffffff;
-  background-color: #2a2a2e;
   border-radius: 2px;
-  border: 1px solid rgba(249, 249, 250, 0.2);
+  border: 1px solid;
   width: auto;
   outline: none;
   padding: 8px 8px;
   resize: none;
 }
-.inputField textarea:hover {
-  border-color: rgba(249, 249, 250, 0.4);
+@media (prefers-color-scheme: light) {
+  .inputField textarea {
+    color: #0c0c0d;
+    background-color: #f9f9fa;
+    border-color: rgba(12, 12, 13, 0.2);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .inputField textarea {
+    color: #ffffff;
+    background-color: #2a2a2e;
+    border-color: rgba(249, 249, 250, 0.2);
+  }
+}
+@media (prefers-color-scheme: light) {
+  .inputField textarea:hover {
+    border-color: rgba(12, 12, 13, 0.3);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .inputField textarea:hover {
+    border-color: rgba(249, 249, 250, 0.4);
+  }
 }
 .inputField textarea:focus {
   border-color: #0a84ff;

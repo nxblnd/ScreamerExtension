@@ -7,9 +7,16 @@ body {
   justify-content: space-between;
 
   padding: 4px;
-  color: $primary-text-color;
   font-size: 13px;
-  background-color: $content-box-background;
+  
+  @media (prefers-color-scheme: light) {
+    color: $primary-text-light;
+    background-color: $content-box-background-light;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: $primary-text-dark;
+    background-color: $content-box-background-dark;
+  }
 }
 
 @mixin btn-states {
@@ -44,30 +51,43 @@ body {
 
 @mixin input-style {
 
-  color: $primary-text-color;
-  background-color: $element-bg-color;
+  @media (prefers-color-scheme: light) {
+    color: $primary-text-light;
+    background-color: $element-bg-color-light;
+    border-color: $grey-90-a20;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: $primary-text-dark;
+    background-color: $element-bg-color-dark;
+    border-color: $grey-10-a20;
+  }
 
   border-radius: 2px;
-  border: 1px solid $grey-10-a20;
+  border: 1px solid;
 
   width: auto;
 
   outline: none;
 
   &:hover {
-    border-color: $grey-10-a40;
+    @media (prefers-color-scheme: light) {
+      border-color: $grey-90-a30;
+    }
+    @media (prefers-color-scheme: dark) {
+      border-color: $grey-10-a40;
+    }
   }
 
   &:focus {
     border-color: $blue-50;
     box-shadow: 0 0 0 1px $btn-focus-A,
-    0 0 0 4px $btn-focus-B;
+                0 0 0 4px $btn-focus-B;
   }
 
   &:invalid {
     border-color: $red-60;
     box-shadow: 0 0 0 1px $btn-error-A,
-    0 0 0 4px $btn-error-B;
+                0 0 0 4px $btn-error-B;
   }
 
   &::placeholder {
@@ -102,17 +122,34 @@ input[type='checkbox'] {
   padding: 1px;
   margin: 4px 4px 4px 0;
 
-  background-color: $grey-10-a10;
-
   border-radius: 2px;
-  border: 1px solid $grey-10-a20;
+  border: 1px solid;
+
+  @media (prefers-color-scheme: light) {
+    background-color: $grey-90-a10;
+    border-color: $grey-90-a20;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: $grey-10-a10;
+    border-color: $grey-10-a20;
+  }
 
   &:hover {
-    background-color: $grey-10-a20;
+    @media (prefers-color-scheme: light) {
+      background-color: $grey-90-a20;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-color: $grey-10-a20;
+    }
   }
 
   &:active {
-    background-color: $grey-10-a40;
+    @media (prefers-color-scheme: light) {
+      background-color: $grey-90-a30;
+    }
+    @media (prefers-color-scheme: dark) {
+      background-color: $grey-10-a40;
+    }
   }
 
   &:focus {
