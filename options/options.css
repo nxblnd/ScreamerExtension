@@ -179,6 +179,8 @@ form > div {
 .savePanel {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  column-gap: 16px;
 }
 
 .status {
