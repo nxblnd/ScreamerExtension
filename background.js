@@ -36,11 +36,15 @@ function contentScript(port) {
 }
 
 function callContentScript(port) {
-    let hostname = new URL(port.sender.url).hostname;
+    let hostname = trimWWW(new URL(port.sender.url).hostname);
     if (domains.includes(hostname)) {
         port.postMessage({timeLimit: options.timeLimit});
         port.onMessage.addListener(dispatchAudio);
     }
+}
+
+function trimWWW(hostname) {
+    return hostname.replace(/^www./g, '');
 }
 
 function optionsScript(port) {
@@ -89,7 +93,7 @@ function convertListOfSites() {
 
     function processUrl(url) {
         try {
-            return new URL(url).hostname;
+            return trimWWW(new URL(url).hostname);
         } catch {
             return url;
         }
