@@ -102,7 +102,7 @@ input[type=checkbox]:focus-visible, input[type=radio]:focus-visible {
   box-shadow: 0 0 0 1px #0a84ff inset, 0 0 0 1px #0a84ff, 0 0 0 4px rgba(10, 132, 255, 0.3);
 }
 input[type=checkbox]:checked, input[type=radio]:checked {
-  background-image: url("checkbox-check-16.svg");
+  background-image: url("../../resources/icons/checkbox-check-16.svg");
   background-position: center;
   height: 16px;
   width: 16px;
@@ -128,7 +128,7 @@ input[type=radio] {
   border-radius: 100%;
 }
 input[type=radio]:checked {
-  background-image: url("radiobutton-marker-16.svg");
+  background-image: url("../../resources/icons/radiobutton-marker-16.svg");
 }
 
 input[type=number] {

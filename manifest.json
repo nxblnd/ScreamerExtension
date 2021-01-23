@@ -14,27 +14,27 @@
 
   "background": {
     "scripts": [
-      "browser-polyfill.js",
-      "background.js"
+      "src/browser-polyfill.js",
+      "src/background.js"
     ]
   },
   "content_scripts" : [
     {
       "js": [
-        "browser-polyfill.js",
-        "screamer.js"
+        "src/browser-polyfill.js",
+        "src/screamer.js"
       ],
       "matches": ["<all_urls>"]
     }
   ],
   "web_accessible_resources": [
-    "soundboard/antivirusPig.ogg",
-    "soundboard/civilProtection.ogg",
-    "soundboard/alarmClock.ogg"
+    "resources/soundboard/antivirusPig.ogg",
+    "resources/soundboard/civilProtection.ogg",
+    "resources/soundboard/alarmClock.ogg"
   ],
 
   "options_ui": {
-    "page": "options/options.html",
+    "page": "src/options/options.html",
     "browser_style": true
   },
 

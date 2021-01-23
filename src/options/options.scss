@@ -1,4 +1,4 @@
-@import 'ui-colors.scss';
+@import 'ui-colors';
 
 html,
 body {
@@ -161,7 +161,7 @@ input[type='checkbox'] {
   }
 
   &:checked {
-    background-image: url('checkbox-check-16.svg');
+    background-image: url('../../resources/icons/checkbox-check-16.svg');
     background-position: center;
     height: 16px;
     width: 16px;
@@ -178,7 +178,7 @@ input[type='radio'] {
   border-radius: 100%;
 
   &:checked {
-    background-image: url('radiobutton-marker-16.svg');
+    background-image: url('../../resources/icons/radiobutton-marker-16.svg');
   }
 }
 
