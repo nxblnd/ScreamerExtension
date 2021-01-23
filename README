@@ -1,0 +1,16 @@
+# Screamer extension
+
+Funny extension that screams if you spend too much time on selected web-sites
+
+## About
+
+Initially, this extension supposed to be a joking answer to my friend's tweet.
+It would use famous Kaspersky Antivirus pig scream, if you spent more than one minute on Twitter page.
+But I could not resist the urge to make area of application a little wider.
+So, now it allows to set your own time limit, provide list of sites and choose one of 3 sounds (with loop option):
+
+* Antivirus pig scream
+* Civil Protection siren
+* Digital alarm clock beep
+
+While this extension is still kind of joke, you can use it as a legitimate time saving and digital well-being tool.
