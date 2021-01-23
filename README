@@ -14,3 +14,13 @@ So, now it allows to set your own time limit, provide list of sites and choose o
 * Digital alarm clock beep
 
 While this extension is still kind of joke, you can use it as a legitimate time saving and digital well-being tool.
+
+## Technical details
+
+This extension uses WebExtension APIs of browsers. 
+Initial target browser was Mozilla Firefox, hence the use of browser namespace.
+In order to make extension cross-platform, Mozilla's [browser-polyfill.js](https://github.com/mozilla/webextension-polyfill/)  was used.
+
+Elements were styled in accordance with [Photon Design System](https://design.firefox.com/photon/) in order to blend nicely with overall Firefox design. Though during implementation there were some deviations from style guide to make options page look better. Also some observations were made: not every element in Firefox is in sync with style guide anyway.
+
+Final note: actually, I am not too familiar with JavaScript, so code quality might be far from the best.
