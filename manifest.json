@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
-  "version": "0.3",
+  "version": "0.4",
   "default_locale": "en",
 
   "author": "Pavel 'nxblnd' Egorov",
@@ -13,11 +13,17 @@
   ],
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "browser-polyfill.js",
+      "background.js"
+    ]
   },
   "content_scripts" : [
     {
-      "js": ["screamer.js"],
+      "js": [
+        "browser-polyfill.js",
+        "screamer.js"
+      ],
       "matches": ["<all_urls>"]
     }
   ],
