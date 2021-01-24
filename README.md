@@ -36,8 +36,8 @@ Though, manual installation is quite simple:
 1. Download Zip with the latest release
 1. Extract it somewhere on your computer
 1. Go to [chrome://extensions](chrome://extensions)
-    2. Enable "Developer mode"
-    2. Press "Load unpacked" and provide the path to extracted extension
-    2. Ignore that couple of warnings; it's just Google don't want to know anything about Firefox
+1. Enable "Developer mode"
+1. Press "Load unpacked" and provide the path to extracted extension
+1. Ignore that couple of warnings; it's just Google don't want to know anything about Firefox
 1. ??????
 1. Have fun
