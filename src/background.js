@@ -23,6 +23,8 @@ browser.storage.sync.get()
 
 browser.runtime.onConnect.addListener(dispatchPort);
 
+browser.tabs.onRemoved.addListener(() => dispatchAudio({audio: 'stop'}));
+
 function dispatchPort(port) {
     if (port.name === 'content script') {
         contentScript(port);

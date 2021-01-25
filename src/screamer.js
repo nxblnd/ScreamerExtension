@@ -19,5 +19,3 @@ function initTimer(msg) {
     setTimer();
     document.addEventListener("visibilitychange", setTimer);
 }
-
-
