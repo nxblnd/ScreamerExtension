@@ -27,7 +27,12 @@ Final note: actually, I am not too familiar with JavaScript, so code quality mig
 
 ## Installation
 
-Addon is available at [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/screamer/) for Firefox.
+### Firefox
+
+Addon is available at [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/screamer/).
+
+### Chrome
+
 As for Chrome, you'll need to install extension manually since I don't want to deal with Chrome Extension Store developer fee.
 Maybe if my extension was somewhat more useful, I would spend that money, but right now I don't see any reason to do so.
 
@@ -37,7 +42,7 @@ Though, manual installation is quite simple:
 1. Extract it somewhere on your computer
 1. Go to [chrome://extensions](chrome://extensions)
 1. Enable "Developer mode"
-1. Press "Load unpacked" and provide the path to extracted extension
+1. Press "Load unpacked" and provide the path from step 2
 1. Ignore that couple of warnings; it's just Google don't want to know anything about Firefox
 1. ??????
 1. Have fun
