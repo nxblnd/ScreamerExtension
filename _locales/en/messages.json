@@ -33,6 +33,10 @@
     "message": "Loop sound",
     "description": "Label for loop option"
   },
+  "label_onActive": {
+    "message": "Play sound only on active tab",
+    "description": "Allows to choose if sound should be played on active tab or any open tab"
+  },
   "button_save": {
     "message": "Save",
     "description": "'Save' button label"

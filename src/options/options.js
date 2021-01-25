@@ -40,7 +40,8 @@ function updateOptions() {
         timeLimit: document.querySelector('#timeLimit').value * msInMinute,
         listOfSites: document.querySelector('#listOfSites').value.match(/\S+/g) || [],
         sound: document.querySelector('input[name="sound"]:checked').id,
-        loop: document.querySelector('#loop').checked
+        loop: document.querySelector('#loop').checked,
+        onActive: document.querySelector('#onActive').checked
     }
     background.postMessage({type: 'set', options: options});
     return options;
@@ -53,6 +54,7 @@ function restoreOptions() {
         document.querySelector('#listOfSites').value = options.listOfSites.join('\n');
         document.querySelector('#' + options.sound).checked = true;
         document.querySelector('#loop').checked = options.loop;
+        document.querySelector('#onActive').checked = options.onActive;
     }
 
     background.postMessage({type: 'get'});
