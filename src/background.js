@@ -3,7 +3,8 @@ const defaultOptions = {
     timeLimit: 5 * msInMinute,
     listOfSites: [],
     sound: 'antivirusPig',
-    loop: true
+    loop: true,
+    onActive: true,
 }
 const soundboard = {
     antivirusPig: browser.runtime.getURL("resources/soundboard/antivirusPig.ogg"),
