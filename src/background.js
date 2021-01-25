@@ -39,7 +39,10 @@ function contentScript(port) {
 function callContentScript(port) {
     let hostname = trimWWW(new URL(port.sender.url).hostname);
     if (domains.includes(hostname)) {
-        port.postMessage({timeLimit: options.timeLimit});
+        port.postMessage({
+            timeLimit: options.timeLimit,
+            onActive: options.onActive
+        });
         port.onMessage.addListener(dispatchAudio);
     }
 }
