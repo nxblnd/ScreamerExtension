@@ -1,12 +1,12 @@
 let background = browser.runtime.connect({name: 'content script'});
-background.onMessage.addListener(setTimer);
+background.onMessage.addListener(initTimer);
 
-function setTimer(msg) {
+function initTimer(msg) {
 
     let timer;
 
-    function visibilityCheck() {
-        if (document.visibilityState === 'visible') {
+    function setTimer() {
+        if (msg.onActive === false || document.visibilityState === 'visible') {
             timer = setTimeout(
                 () => {background.postMessage({audio: "play"})},
                 msg.timeLimit);
@@ -16,8 +16,6 @@ function setTimer(msg) {
         }
     }
 
-    visibilityCheck();
-    document.addEventListener("visibilitychange", visibilityCheck);
+    setTimer();
+    document.addEventListener("visibilitychange", setTimer);
 }
-
-

@@ -3,7 +3,8 @@ const defaultOptions = {
     timeLimit: 5 * msInMinute,
     listOfSites: [],
     sound: 'antivirusPig',
-    loop: true
+    loop: true,
+    onActive: true,
 }
 const soundboard = {
     antivirusPig: browser.runtime.getURL("resources/soundboard/antivirusPig.ogg"),
@@ -22,6 +23,8 @@ browser.storage.sync.get()
 
 browser.runtime.onConnect.addListener(dispatchPort);
 
+browser.tabs.onRemoved.addListener(() => dispatchAudio({audio: 'stop'}));
+
 function dispatchPort(port) {
     if (port.name === 'content script') {
         contentScript(port);
@@ -38,7 +41,10 @@ function contentScript(port) {
 function callContentScript(port) {
     let hostname = trimWWW(new URL(port.sender.url).hostname);
     if (domains.includes(hostname)) {
-        port.postMessage({timeLimit: options.timeLimit});
+        port.postMessage({
+            timeLimit: options.timeLimit,
+            onActive: options.onActive
+        });
         port.onMessage.addListener(dispatchAudio);
     }
 }

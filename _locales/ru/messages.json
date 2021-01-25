@@ -33,6 +33,10 @@
     "message": "Зациклить звук",
     "description": "Label for loop option"
   },
+  "label_onActive": {
+    "message": "Отслеживать только активную вкладку",
+    "description": "Allows to choose if sound should be played on active tab or any open tab"
+  },
   "button_save": {
     "message": "Сохранить",
     "description": "'Save' button label"
