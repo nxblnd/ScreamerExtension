@@ -38,6 +38,10 @@
     "browser_style": true
   },
 
+  "icons": {
+    "16": "resources/icons/logo-16.svg"
+  },
+
   "browser_specific_settings": {
     "gecko": {
       "id": "screamer-addon@example.com"
