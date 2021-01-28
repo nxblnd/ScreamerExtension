@@ -276,3 +276,23 @@ form > div {
     opacity: 0;
   }
 }
+
+ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.versionNumber {
+  font-weight: bold;
+
+  &::before {
+    content: "Version ";
+  }
+}
+
+.versionDescription {
+  margin: 0.5rem 0 1rem 2rem;
+}
