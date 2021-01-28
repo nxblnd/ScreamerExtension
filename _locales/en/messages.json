@@ -48,5 +48,10 @@
   "status_saveError": {
     "message": "Error occurred!!!",
     "description": "Save was not successful"
+  },
+
+  "label_updateLog": {
+    "message": "What's new?",
+    "description": "Update log spoiler header"
   }
 }
