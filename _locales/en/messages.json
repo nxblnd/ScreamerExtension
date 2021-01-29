@@ -53,5 +53,14 @@
   "label_updateLog": {
     "message": "What's new?",
     "description": "Update log spoiler header"
+  },
+  "label_version": {
+    "message": "Version"
+  },
+  "update_1_0": {
+    "message": "First release version."
+  },
+  "update_1_1": {
+    "message": "New control added: now you can select if sound should be played then tab is opened, but not in focus."
   }
 }
