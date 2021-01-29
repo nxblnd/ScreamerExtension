@@ -48,5 +48,19 @@
   "status_saveError": {
     "message": "Произошла ошибка!!!",
     "description": "Save was not successful"
+  },
+
+  "label_updateLog": {
+    "message": "Что нового?",
+    "description": "Update log spoiler header"
+  },
+  "label_version": {
+    "message": "Что нового?"
+  },
+  "update_1_0": {
+    "message": "Первая релизная версия."
+  },
+  "update_1_1": {
+    "message": "Добавлен новый элемент управления: теперь можно выбрать, должен ли звук играть когда вкладка открыта, но не находится в фокусе."
   }
 }

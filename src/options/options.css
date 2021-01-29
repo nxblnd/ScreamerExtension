@@ -287,3 +287,20 @@ form > div {
     opacity: 0;
   }
 }
+ul {
+  padding: 0 0 0 1rem;
+}
+ul li {
+  list-style: none;
+}
+
+.versionNumber {
+  font-weight: bold;
+}
+.versionNumber::before {
+  content: "__MSG_label_version__ ";
+}
+
+.versionDescription {
+  margin: 0.5rem 0 1rem 2rem;
+}
